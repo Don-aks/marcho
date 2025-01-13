@@ -1,0 +1,82 @@
+@use 'vars' as *
+@use 'fonts'
+@use 'reset'
+@use 'global'
+
+
+// ======= HEADER ======= //
+
+.header
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 45px
+
+.menu
+  display: flex
+  margin-right: 20px
+
+  font-family: $second-font
+
+  &__item:not(:last-child)
+    margin-right: 35px
+
+  &__link
+    padding-bottom: 1px
+
+    text-transform: uppercase
+    color: $title
+    transition: color 0.3s, border-color 0.3s
+
+    &--active
+      font-weight: 700
+    
+      color: $primary
+      border-bottom: 1px solid $primary
+
+.user-nav
+  display: flex
+
+  &__item:not(:last-child)
+    padding-right: 25px
+
+  &__link
+    position: relative
+
+    display: block
+    width: 20px
+    height: 20px
+
+    @extend %bg-contain
+
+  &__sign-in
+    background-image: url("../img/icons/user.svg")
+
+  &__favorite
+    background-image: url("../img/icons/heart.svg")
+
+  &__search
+    background-image: url("../img/icons/search.svg")
+
+  &__cart
+    background-image: url("../img/icons/cart.svg")
+
+  &__num
+    position: absolute
+    top: -9px
+    right: -13px
+
+    width: 20px
+    height: 20px
+
+    font-size: 12px
+    line-height: 20px
+    text-align: center
+
+    background-color: $primary
+    color: $white
+
+    border-radius: 50%
+
+@import 'media'
