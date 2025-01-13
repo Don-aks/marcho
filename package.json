@@ -11,14 +11,14 @@
   "devDependencies": {
     "browser-sync": "^3.0.3",
     "del": "^6.0.0",
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^6.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "plumber": "^0.4.8",
-    "sass": "^1.83.0"
+    "sass": "^1.49.0"
   }
 }
