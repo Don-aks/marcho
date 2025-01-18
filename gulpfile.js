@@ -11,34 +11,34 @@ const browserSync   = require('browser-sync').create();
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: 'src/'
+      baseDir: 'app/'
     },
     notify: false
   })
 }
 
 function styles() {
-  return src('src/sass/style.sass')
+  return src('app/sass/style.sass')
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
       grid: true
     }))
-    .pipe(dest('src/css/'))
+    .pipe(dest('app/css/'))
     .pipe(browserSync.stream())
 }
 
 function scripts() {
-  return src(['src/js/main.js'])
+  return src(['app/js/main.js'])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(dest('src/js'))
+    .pipe(dest('app/js'))
     .pipe(browserSync.stream())
 }
 
 function images() {
-  return src('src/img/**/*.*')
+  return src('app/img/**/*.*')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.mozjpeg({quality: 75, progressive: true}),
@@ -61,10 +61,10 @@ function images() {
 
 function build() {
   return src([
-      'src/**/*.html',
-      'src/css/style.min.css',
-      'src/js/main.min.js'
-    ], {base: 'src'})
+      'app/**/*.html',
+      'app/css/style.min.css',
+      'app/js/main.min.js'
+    ], {base: 'app'})
     .pipe(dest('dist'))
 }
 
@@ -73,9 +73,9 @@ function cleanDist() {
 }
 
 function watching() {
-  watch(['src/sass/**/*.sass'], styles);
-  watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
-  watch(['src/**/*.html']).on('change', browserSync.reload)
+  watch(['app/sass/**/*.sass'], styles);
+  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/**/*.html']).on('change', browserSync.reload)
 }
 
 exports.styles      = styles;

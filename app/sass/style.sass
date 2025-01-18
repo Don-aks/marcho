@@ -1,0 +1,188 @@
+@use 'vars' as *
+@use 'fonts'
+@use 'reset'
+@use 'global'
+
+
+// ======= HEADER ======= //
+
+.header
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 45px
+
+.menu
+  display: flex
+  margin-right: 20px
+
+  font-family: $second-font
+
+  &__item:not(:last-child)
+    margin-right: 35px
+
+  &__link 
+    padding-bottom: 1px
+
+    text-transform: uppercase
+    color: $title
+    transition: color 0.3s, border-color 0.3s
+
+    &--active
+      font-weight: 700
+    
+      color: $primary
+      border-bottom: 1px solid $primary
+
+.user-nav
+  display: flex
+
+  &__item:not(:last-child)
+    padding-right: 25px
+
+  &__link
+    position: relative
+
+    display: block
+    width: 20px
+    height: 20px
+
+    @extend %bg-contain
+
+  &__sign-in
+    background-image: url("../img/icons/user.svg")
+
+  &__favorite
+    background-image: url("../img/icons/heart.svg")
+
+  &__search
+    background-image: url("../img/icons/search.svg")
+
+  &__cart
+    background-image: url("../img/icons/cart.svg")
+
+  &__num
+    position: absolute
+    top: -9px
+    right: -13px
+
+    width: 20px
+    height: 20px
+
+    font-size: 12px
+    line-height: 20px
+    text-align: center
+
+    background-color: $primary
+    color: $white
+
+    border-radius: 50%
+
+
+// ======= FOOTER ======= //
+
+.footer
+  background-color: $bg
+
+  &__inner
+    display: flex
+    padding: 70px 0 40px
+
+    border-bottom: 1px solid $border
+
+  &__contact
+    max-width: 250px
+    margin-right: 50px
+
+  &__logo
+    display: block
+    margin-bottom: 33px
+
+  &__address,
+  &__email,
+  &__phone
+    display: block
+    margin-bottom: 14px
+
+  &__phone
+    margin-bottom: 30px
+
+  &__social-list
+    display: flex
+  
+  &__social-item:not(:last-child)
+    margin-right: 18px
+
+  &__social-svg
+    transition: fill 0.3s
+    fill: $text
+
+    &:hover
+      fill: $primary
+
+  &__menu
+    display: flex
+
+  &__column
+    width: 170px
+    margin-right: 30px
+
+  &__title
+    margin-bottom: 40px
+
+    font-family: $second-font
+    font-size: 22px
+    line-height: 1
+
+    color: $title
+
+  &__item
+    margin-bottom: 14px
+
+  &__subscribe
+    max-width: 470px
+
+  &__text
+    margin-bottom: 25px
+
+  &__input
+    width: 100%
+    max-width: 320px
+    padding: 12px 10px 12px 15px 
+
+    background-color: $white
+    box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3)
+
+    &::placeholder
+      color: $text
+      font-size: 16px
+
+  &__btn
+    padding: 12px 26px
+
+    text-transform: uppercase
+
+    color: $white
+    background-color: $primary
+    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3)
+
+  &__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center  
+    height: 75px
+
+    font-size: 12px
+
+  &__accept-text
+    margin-right: 18px
+
+  &__accept-img
+    display: inline
+    margin-right: 25px
+
+    vertical-align: middle
+
+
+@import 'media'
