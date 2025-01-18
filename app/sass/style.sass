@@ -23,13 +23,14 @@
     margin-right: 35px
 
   &__link 
-    padding-bottom: 1px
+    padding: 0 2px 1px
 
     text-transform: uppercase
     color: $title
-    transition: color 0.3s, border-color 0.3s
+    transition: color 0.3s, border-color 0.3s, font-weight 0.3s
 
-    &--active
+    &--active,
+    &:hover
       font-weight: 700
     
       color: $primary
