@@ -19,6 +19,10 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "plumber": "^0.4.8",
-    "sass": "^1.49.0"
+    "sass": "^1.49.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
   }
 }

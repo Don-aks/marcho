@@ -1,6 +1,7 @@
 @use 'vars' as *
 @use 'fonts'
 @use 'reset'
+@use 'libs'
 @use 'global'
 
 
@@ -11,7 +12,7 @@
     display: flex
     align-items: center
     justify-content: space-between
-    padding-top: 45px
+    padding: 45px 0 40px
 
 .menu
   display: flex
@@ -79,6 +80,74 @@
     color: $white
 
     border-radius: 50%
+
+
+// ======= HERO ======= //
+
+.hero
+  padding: 65px 0 49px
+  background: $bg url("../img/hero-bg.jpg") center/cover no-repeat
+
+  &__container
+    max-width: 1560px
+
+  &__content
+    padding-left: 175px
+
+  &__item
+    display: flex !important
+    justify-content: space-between
+
+  &__title
+    max-width: 670px
+    margin-bottom: 35px
+
+    font-family: $second-font
+    font-size: 58px
+    line-height: 1.17
+    font-weight: 700
+
+    color: $title
+
+  &__text
+    max-width: 470px
+    margin-bottom: 55px
+
+  &__link
+    padding: 14px 35px
+
+  .slick-dots
+    display: flex
+    justify-content: center
+    margin-top: -80px
+
+    button
+      position: relative
+
+      width: 26px
+      height: 26px
+
+      font-size: 0
+
+      border-radius: 50%
+
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+
+        width: 6px
+        height: 6px
+        
+        border-radius: 50%
+        background-color: $text
+        transform: translate(-50%, -50%)
+
+    .slick-active button 
+      border: 1px solid $primary
+
+  
 
 
 // ======= FOOTER ======= //
@@ -158,15 +227,6 @@
     &::placeholder
       color: $text
       font-size: 16px
-
-  &__btn
-    padding: 12px 26px
-
-    text-transform: uppercase
-
-    color: $white
-    background-color: $primary
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3)
 
   &__bottom
     display: flex
